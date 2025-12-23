@@ -73,6 +73,7 @@ def read_miRNAdat_file(miRNAdat_file,plant_species):
                     L = len(RNA)
                     five_prime = None
                     three_prime = None
+                    keep_miR = True
                     for span in spans:
                         start,end = span
                         if start < L/2:
@@ -103,6 +104,7 @@ def read_miRNAdat_file(miRNAdat_file,plant_species):
                             tend_bp = bp[tend]
                             dist = fstart - tend_bp
                             print(mir_name,'tend',tend,tend_bp,fstart,dist, file=OFFSET)
+                        # print data to cutsite file
                         print(mir_name,fstart,fend,tstart,tend, file=CUTSITES)
                     elif five_prime and not three_prime:
                         fstart,fend = five_prime
@@ -117,11 +119,10 @@ def read_miRNAdat_file(miRNAdat_file,plant_species):
                                     break
                         if fend_bp:
                             tstart = fend_bp + shift
-                            print('tstart',offset)
+                            #print('tstart',offset)
                         else:
-                            print(mir_name,fstart,fend)
-                            print(dot_bracket)
-                            exit()
+                            print('Error: fend no bp',mir_name,fstart,fend)
+                            keep_miR = False
                         # get the tend from fstart
                         fstart_bp = None
                         tend = None
@@ -132,11 +133,14 @@ def read_miRNAdat_file(miRNAdat_file,plant_species):
                                     break
                         if fstart_bp:
                             tend = fstart_bp + shift
-                            print('tend',offset)
+                            #print('tend',offset)
                         else:
-                            print(mir_name,fstart,fend)
-                            exit()
-                        print(mir_name,fstart,fend,tstart,tend, file=CUTSITES)
+                            print('Error: fstart no bp',mir_name,fstart,fend)
+                            keep_miR = False
+                        ############
+                        # print the record to the cutsites file
+                        if keep_miR:
+                            print(mir_name,fstart,fend,tstart,tend, file=CUTSITES)
                     elif not five_prime and three_prime:
                         tstart,tend = three_prime
                         shift = 2
@@ -148,10 +152,10 @@ def read_miRNAdat_file(miRNAdat_file,plant_species):
                                     break
                         if tend_bp:
                             fstart = tend_bp + shift
-                            print('fstart',offset)
+                            #print('fstart',offset)
                         else:
-                            print(mir_name,tstart,tend)
-                            exit()
+                            print('Error: tend no bp',mir_name,tstart,tend)
+                            keep_miR = False
                         # finally get fend from tstart
                         for offset in offsets:
                             if 1 <= tstart + offset <= L:
@@ -160,20 +164,21 @@ def read_miRNAdat_file(miRNAdat_file,plant_species):
                                     break
                         if tend_bp:
                             fend = tstart_bp + shift
-                            print('tstart',offset)
+                            #print('tstart',offset)
                         else:
-                            print(mir_name,tstart,tend)
-                            exit()
-                        print(mir_name,fstart,fend,tstart,tend, file=CUTSITES)
+                            print('Error: fend no bp',mir_name,tstart,tend)
+                            keep_miR = False
+                        if keep_miR:
+                            print(mir_name,fstart,fend,tstart,tend, file=CUTSITES)
                     else:
                         print('Error! Unexpected condition found.')
                         exit()
-                    
-                            
-                            
-    print(total, count_fstart, count_fstart/total, count_fend, count_fend/total)
-                            
-    return five_prime_starts,three_prime_starts
+    # print summary 
+    print(f'fstart: {count_fstart} out of {total} {100.0*count_fstart/total}%')
+    print(f'fend: {count_fend} out of {total} {100.0*count_fend/total}%')
+    print(f'tstart: {count_tstart} out of {total} {100.0*count_tstart/total}%')
+    print(f'tend: {count_tend} out of {total} {100.0*count_tend/total}%')
+
                         
 def get_base_pairs(dot_bracket):
     bp = {}
