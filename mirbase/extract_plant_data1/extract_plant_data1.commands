@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Added by hpcman queue submit
+python scripts/extract_plant_microRNAs.py miRNA.dat.txt plant_miRNA_names.txt > plant_data1.txt

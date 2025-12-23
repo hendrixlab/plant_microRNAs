@@ -1,0 +1,10 @@
+##hpcman.jobs={'runid':'1753611','runname':'plant_stats','host':'aspen5','wd':'/home/bb/hendrixd/data/MicroRNAs','taskid':''}
+	Memory (kb):                       35328
+	# SWAP  (freq):                    0
+	# Waits (freq):                    140886
+	CPU (percent):                     89%
+	Time (seconds):                    360.66
+	Time (hh:mm:ss.ms):                6:00.66
+	System CPU Time (seconds):         52.98
+	User   CPU Time (seconds):         268.82
+	Full Command:                      bash plant_stats/plant_stats.commands

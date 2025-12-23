@@ -1,0 +1,19 @@
+##hpcman.jobs={'runid':'1854775','runname':'cutsite_test2','host':'aspen15','wd':'/home/bb/hendrixd/data/microRNAs/plant_miR_stats','taskid':''}
+Traceback (most recent call last):
+  File "/nfs6/BB/Hendrix_Lab/microRNAs/plant_miR_stats/../scripts/create_inferred_cutsites.py", line 141, in <module>
+    main()
+  File "/nfs6/BB/Hendrix_Lab/microRNAs/plant_miR_stats/../scripts/create_inferred_cutsites.py", line 14, in main
+    read_miRNAdat_file(miRNAdat_file,plant_species)
+  File "/nfs6/BB/Hendrix_Lab/microRNAs/plant_miR_stats/../scripts/create_inferred_cutsites.py", line 81, in read_miRNAdat_file
+    count_fstart += 1
+    ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'count_fstart' where it is not associated with a value
+Command exited with non-zero status 1
+	Memory (kb):                       11776
+	# SWAP  (freq):                    0
+	# Waits (freq):                    142
+	CPU (percent):                     80%
+	Time (seconds):                    0.09
+	Time (hh:mm:ss.ms):                0:00.09
+	System CPU Time (seconds):         0.02
+	User   CPU Time (seconds):         0.04

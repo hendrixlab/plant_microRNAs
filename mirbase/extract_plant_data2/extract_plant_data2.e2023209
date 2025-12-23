@@ -1,0 +1,10 @@
+##hpcman.jobs={'runid':'2023209','runname':'extract_plant_data2','host':'aspen5','wd':'/home/bb/hendrixd/data/microRNAs/mirbase','taskid':''}
+	Memory (kb):                       35040
+	# SWAP  (freq):                    0
+	# Waits (freq):                    146886
+	CPU (percent):                     99%
+	Time (seconds):                    320.69
+	Time (hh:mm:ss.ms):                5:20.69
+	System CPU Time (seconds):         50.88
+	User   CPU Time (seconds):         269.06
+	Full Command:                      bash extract_plant_data2/extract_plant_data2.commands

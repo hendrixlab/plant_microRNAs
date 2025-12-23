@@ -1,0 +1,1 @@
+hqsub -q '*' -r extract_plant_data2 "python scripts/extract_plant_microRNAs.py miRNA.dat.txt plant_species.txt > plant_data2.txt"

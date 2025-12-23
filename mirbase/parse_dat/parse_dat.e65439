@@ -1,0 +1,12 @@
+/local/cqls/etc/std.bashrc: line 50: bind: warning: line editing not enabled
+/local/cqls/etc/std.bashrc: line 51: bind: warning: line editing not enabled
+ 	Full Command:                      cat miRNA.dat 
+	Memory (kb):                       2048 
+	# SWAP  (freq):                    0 
+	# Waits (freq):                    4368 
+	CPU (percent):                     37% 
+	Time (seconds):                    0.16 
+	Time (hh:mm:ss.ms):                0:00.16 
+	System CPU Time (seconds):         0.06 
+	User   CPU Time (seconds):         0.00 
+Illegal division by zero at -e line 1, <> line 1.

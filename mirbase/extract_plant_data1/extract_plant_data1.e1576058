@@ -1,0 +1,10 @@
+##hpcman.jobs={'runid':'1576058','runname':'extract_plant_data1','host':'cedar0','wd':'/home/bb/hendrixd/data/MicroRNAs','taskid':''}
+	Memory (kb):                       34816
+	# SWAP  (freq):                    0
+	# Waits (freq):                    164718
+	CPU (percent):                     95%
+	Time (seconds):                    607.59
+	Time (hh:mm:ss.ms):                10:07.59
+	System CPU Time (seconds):         86.33
+	User   CPU Time (seconds):         491.08
+	Full Command:                      bash extract_plant_data1/extract_plant_data1.commands

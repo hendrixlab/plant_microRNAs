@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Added by hpcman queue submit
+python ../scripts/create_inferred_cutsites.py miRNA.dat.txt ../mirbase/plant_species.txt > cutsites_test1.txt

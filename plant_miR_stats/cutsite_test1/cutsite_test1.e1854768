@@ -1,0 +1,19 @@
+##hpcman.jobs={'runid':'1854768','runname':'cutsite_test1','host':'aspen15','wd':'/home/bb/hendrixd/data/microRNAs/plant_miR_stats','taskid':''}
+Traceback (most recent call last):
+  File "/nfs6/BB/Hendrix_Lab/microRNAs/plant_miR_stats/../scripts/create_inferred_cutsites.py", line 150, in <module>
+    main()
+  File "/nfs6/BB/Hendrix_Lab/microRNAs/plant_miR_stats/../scripts/create_inferred_cutsites.py", line 14, in main
+    read_miRNAdat_file(miRNAdat_file,plant_species)
+  File "/nfs6/BB/Hendrix_Lab/microRNAs/plant_miR_stats/../scripts/create_inferred_cutsites.py", line 103, in read_miRNAdat_file
+    return five_prime_starts,three_prime_starts
+           ^^^^^^^^^^^^^^^^^
+NameError: name 'five_prime_starts' is not defined
+Command exited with non-zero status 1
+	Memory (kb):                       35300
+	# SWAP  (freq):                    0
+	# Waits (freq):                    138292
+	CPU (percent):                     100%
+	Time (seconds):                    335.50
+	Time (hh:mm:ss.ms):                5:35.50
+	System CPU Time (seconds):         60.21
+	User   CPU Time (seconds):         276.74
